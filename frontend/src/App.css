@@ -1,0 +1,106 @@
+
+
+.button-con {
+  display: flex;  
+  width: 400px;        /* Arrange items horizontally */
+            /* Add space between cards */
+  overflow-x: auto;       /* Enable horizontal scrolling */
+  overflow-y: hidden;     /* Prevent vertical overflow */
+  white-space: nowrap;    /* Prevent content from wrapping */
+  padding: 10px;          /* Optional: Add padding for better visibility */
+  scrollbar-width: none;  /* Hide scrollbar (Firefox) */
+  background-color:darkred;
+  
+}
+
+
+.button-con::-webkit-scrollbar {
+  display: none;          /* Hide scrollbar (Chrome, Edge, Safari) */
+}
+#root{
+  background-color: #FFFFFF;
+}
+.button-con:hover{
+  background-color:darkorange;
+}
+.badges{
+  border: 1px solid lightblue;
+  padding: 5px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.com-table-margin{
+ margin: 20px;
+}
+.skills{
+  background-color: darkslategrey;
+  padding: 10px;
+  border-radius: 20px;
+  margin: 10px;
+  color: #ffffff;
+}
+.tran-btn{
+  background-color: transparent;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+  margin-right: 20px;
+  padding: 5px;
+  width: 80px;
+}
+.back-btn{
+  background-color: transparent;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+
+}
+.selected{
+  background-color: black;
+  color: white;
+  padding: 10px;
+  width: 80px;
+  border-radius: 10px;
+
+}
+.details-btn{
+  background-color: transparent;
+ 
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  margin-right: 5px;
+  
+
+
+}
+.apply-btn{
+ 
+ 
+
+  border-radius: 50px;
+  color: white;
+
+
+  border: 1pa solid green;
+}
+.job-des-color{
+  color: grey;
+  font-weight: 400;
+font-size: 18px;
+font-weight: 500;
+
+}
+.word-space{
+  letter-spacing: 0.5px;
+}
+
+
+
+.details-btn:hover{
+  background-color: blue;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .com-table-margin {
+    margin: 50px;
+  }
+}
