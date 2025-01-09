@@ -21,7 +21,7 @@ app.use(cookiParser());
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://ganeshmallesh-joby-ipb2.onrender.com",
     credentials: true,
   })
 );
