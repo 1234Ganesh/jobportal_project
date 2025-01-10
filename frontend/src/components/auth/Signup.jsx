@@ -1,12 +1,11 @@
 
 import Navbar from "../shared/Navbar";
-import { Link, useFetcher, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading } from "../../redux/authSlice";
 import { USER_API_END_POINT } from "../../utils/constant";
 
 const Signup = () => {
@@ -51,8 +50,6 @@ const Signup = () => {
       if (res.data.success) {
         navigate("/login");
         toast.success(res.data.message);
-      } else {
-        toast.error(res.data.message || "Something went wrong!");
       }
     } catch (error) {
       toast.error(error.response?.data?.message || "Something went wrong!");
