@@ -6,8 +6,10 @@ import Footer from "./Footer";
 import LatestJobs from "./LatestJobs";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import useGetAllJob from "../../hooks/useGetAllJob";
 
 const Home = () => {
+  useGetAllJob();
   const { user } = useSelector((store) => store.auth);
   const navigate = useNavigate();
   useEffect(() => {
