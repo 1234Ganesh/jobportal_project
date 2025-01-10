@@ -5,7 +5,7 @@ import axios from "axios";
 import { USER_API_END_POINT } from "../../utils/constant";
 import toast from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading, setUser } from "../../redux/authSlice";
+import {  setUser } from "../../redux/authSlice";
 
 const Login = () => {
   const [input, setInput] = useState({
@@ -13,7 +13,7 @@ const Login = () => {
     password: "",
     role: "",
   });
-  const { loading, user } = useSelector((store) => store.auth);
+  const { user } = useSelector((store) => store.auth);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -24,7 +24,7 @@ const Login = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
     try {
-      dispatch(setLoading(true));
+    
       const res = await axios.post(`${USER_API_END_POINT}/login`, input, {
         headers: {
           "Content-Type": "application/json",
@@ -38,9 +38,7 @@ const Login = () => {
       }
     } catch (error) {
       toast.error(error.response?.data?.message || "Something went wrong!");
-    } finally {
-      dispatch(setLoading(false));
-    }
+    } 
   };
 
   useEffect(() => {
@@ -103,15 +101,11 @@ const Login = () => {
                 </div>
                 <br />
               </div>
-              {loading ? (
-                <div className="spinner-border  m-5" role="status">
-                  <span className="sr-only"></span>
-                </div>
-              ) : (
+              
                 <div className="d-grid gap-5">
                   <button className="btn btn-warning">Login</button>
                 </div>
-              )}
+            
 
               <p className="mt-3">
                 Don't have an account? <span></span>
