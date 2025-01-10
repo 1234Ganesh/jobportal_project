@@ -1,3 +1,4 @@
+
 import Navbar from "../shared/Navbar";
 import { Link, useFetcher, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
@@ -31,6 +32,17 @@ const Signup = () => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    if (
+      !input.fullName ||
+      !input.email ||
+      !input.phoneNumber ||
+      !input.password ||
+      !input.role
+    ) {
+      toast.error("Please fill in all required fields!");
+      return;
+    }
     const formData = new FormData(); //formdata object
     formData.append("fullName", input.fullName);
     formData.append("email", input.email);
@@ -51,6 +63,8 @@ const Signup = () => {
       if (res.data.success) {
         navigate("/login");
         toast.success(res.data.message);
+      } else {
+        toast.error(res.data.message || "Something went wrong!");
       }
     } catch (error) {
       toast.error(error.response?.data?.message || "Something went wrong!");
